@@ -35,3 +35,10 @@ class Skill(models.Model):
     def __str__(self):
         return str(self.name)
 
+class User(models.Model):
+    username = models.CharField(max_length=200, blank=True, null=True)
+    email = models.EmailField(max_length=500, blank=True, null=True)
+    password = models.CharField(max_length=200, blank=True, null=True)
+
+    def __str__(self):
+        return str(self.username)

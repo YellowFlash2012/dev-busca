@@ -24,6 +24,21 @@
     </header>
 
     <main>
+    
+    {% if messages %}
+
+        {% for message in messages %}
+    
+        <div class="alert alert--{{message.tags}}">
+        <p class="alert__message">{{message}}</p>
+        <!-- <button class="alert__close">x</button> -->
+        </div>
+    
+        {% endfor %}
+
+    {% endif %}
+
+
         {% block content%}
 
         {% endblock %}
@@ -31,6 +46,6 @@
 
     <footer></footer>
 
-    <script src="app.js"></script>
+    <script src="{% static 'uikit/app.js' %}"></script>
 </body>
 </html>

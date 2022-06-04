@@ -641,13 +641,15 @@ img {
 .auth {
   width: 100%;
   position: relative;
-  z-index: 1;
+  /* z-index: 1; */
   background: transparent;
-  height: 99vh;
+  /* height: 99vh; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+
 
 .auth::after {
   z-index: -1;
@@ -659,7 +661,7 @@ img {
   left: 0;
   bottom: 0;
   right: 0;
-  background: url(../images/pattern.jpg);
+  background: url(../images/pattern.webp);
 }
 
 .auth > .card {
@@ -668,6 +670,7 @@ img {
   max-width: 65rem;
 }
 
+
 @media screen and (min-width: 650px) {
   .auth > .card {
     padding: 5rem 8rem;
@@ -675,6 +678,7 @@ img {
     max-width: 65rem;
   }
 }
+
 
 .auth__header h3 {
   color: var(--color-sub);
@@ -844,4 +848,18 @@ img {
   color: var(--color-sub);
   margin-bottom: 1rem;
   margin-top: 2rem;
+}
+
+.alert {
+
+  position: fixed;
+
+  left: 50%;
+
+  top: 120px;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 99999;
+
 }
