@@ -2,7 +2,7 @@ from urllib import request
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 
-from projects.utils import searchProjects
+from projects.utils import projectsPagination, searchProjects
 from .models import Project, Tag
 from .forms import ProjectForm
 
@@ -11,7 +11,9 @@ from .forms import ProjectForm
 def projects(request):
     projects, search_query = searchProjects(request)
 
-    context = {"projects":projects, 'search_query':search_query}
+    custom_range, projects = projectsPagination(request, projects, 9)
+
+    context = {"projects":projects, 'search_query':search_query, 'custom_range':custom_range}
     return render(request, "projects/projects.html", context)
 
 def project(request, pk):
