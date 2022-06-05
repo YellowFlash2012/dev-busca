@@ -63,13 +63,13 @@
             {% csrf_token %}
           <!-- Input:Email -->
           <div class="form__field">
-            <label for="formInput#text">Email: </label>
+            <label for="formInput#text">Username: </label>
             <input
               class="input input--text"
               id="formInput#text"
-              type="email"
-              name="email"
-              placeholder="Enter your email..."
+              type="text"
+              name="username"
+              placeholder="Enter your username..."
             />
           </div>
 
@@ -99,3 +99,4 @@
 {% endif %}
 
 {% endblock content %}
+

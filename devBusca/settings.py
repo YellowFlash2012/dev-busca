@@ -29,6 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'projects.apps.ProjectsConfig',
     'users.apps.UsersConfig',
+    
 ]
 
 MIDDLEWARE = [
@@ -53,6 +55,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'devBusca.urls'
+
 
 TEMPLATES = [
     {
