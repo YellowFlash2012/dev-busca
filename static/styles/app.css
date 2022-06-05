@@ -6,6 +6,16 @@
   background-color: var(--color-sub-light);
 }
 
+.btn--sub--delete {
+  background-color: red;
+  color: #fff;
+
+}
+.btn--sub--cancel {
+  background-color: green;
+  color: #fff;
+}
+
 .card {
   border: 2px solid var(--color-light);
 }
