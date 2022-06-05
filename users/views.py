@@ -1,18 +1,22 @@
-from multiprocessing import context
+
 from django.shortcuts import redirect, render
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import User
 
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+
+from users.utils import searchProfiles
 from .forms import ProfileForm, SignUpForm, SkillForm
 
-from users.models import Profile
+from users.models import Profile, Skill
+from django.db.models import Q
 
 # Create your views here.
 def profiles(request):
-    profiles = Profile.objects.all()
-    context = {"profiles":profiles}
+    profiles, search_query = searchProfiles(request)
+
+    context = {"profiles":profiles, 'search_query':search_query}
     return render(request, "users/profiles.html", context)
 
 def userProfile(request, pk):
