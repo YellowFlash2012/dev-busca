@@ -15,4 +15,8 @@ urlpatterns=[
     path("register/", views.register_auth, name="register"),
     path("login/", views.login_auth, name="login"),
     path("logout/", views.logout_auth, name="logout"),
+
+    path('inbox/', views.inbox, name='inbox'),
+    path('message/<str:pk>/', views.view_msg, name='message'),
+    path('create-message//<str:pk>/', views.create_msg, name='create-message'),
 ]
