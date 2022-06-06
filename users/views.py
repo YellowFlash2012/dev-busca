@@ -10,7 +10,7 @@ from django.contrib import messages
 from users.utils import profilesPagination, searchProfiles
 from .forms import MessageForm, ProfileForm, SignUpForm, SkillForm
 
-from users.models import Profile, Skill
+from users.models import Profile, Skill, Message
 from django.db.models import Q
 
 # Create your views here.
