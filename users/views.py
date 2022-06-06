@@ -148,7 +148,7 @@ def login_auth(request):
         return redirect("profiles")
 
     if request.method == "POST":
-        username = request.POST["username"]
+        username = request.POST["username"].lower()
         password = request.POST["password"]
 
         try:
@@ -161,7 +161,7 @@ def login_auth(request):
         if user is not None:
             login(request, user)
             messages.success(request, f"Welcome back, {user.username}")
-            return redirect("profiles")
+            return redirect(request.GET['next'] if 'next' in request.GET else 'account')
         else:
             messages.error(request, "Invalid credentials, please try again!")
             
