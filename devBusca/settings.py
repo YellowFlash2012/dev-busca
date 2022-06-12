@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from dotenv import load_dotenv
+import dj_database_url
 from pathlib import Path
 load_dotenv()
 from datetime import timedelta
@@ -33,7 +34,7 @@ SECRET_KEY = 'django-insecure-i)ymfi(^c78$yuf&c&^(ko15f440_@0$olr*l187@%02b!h85a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["http://127.0.0.1", "https://devbusca.herokuapp.com/"]
+ALLOWED_HOSTS = ["http://127.0.0.1", "https://devbusca.herokuapp.com/", "localhost"]
 
 
 
@@ -133,15 +134,17 @@ WSGI_APPLICATION = 'devBusca.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'USER':'postgres',
-        'NAME':'devbusca',
-        'PASSWORD':'',
-        'PORT':'5432',
-        'HOST':'',
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'USER':'postgres',
+    #     'NAME':'devbusca',
+    #     'PASSWORD':'',
+    #     'PORT':'5432',
+    #     'HOST':'',
+    # }
 }
+
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
