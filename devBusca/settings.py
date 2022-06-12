@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-i)ymfi(^c78$yuf&c&^(ko15f440_@0$olr*l187@%02b!h85a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["http://127.0.0.1", "https://devbusca.herokuapp.com/"]
 
 
 
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'projects.apps.ProjectsConfig',
     'users.apps.UsersConfig',
     'rest_framework',
+    'corsheaders',
 ]
 
 REST_FRAMEWORK = {
@@ -89,6 +90,7 @@ SIMPLE_JWT = {
 }
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -127,10 +129,20 @@ WSGI_APPLICATION = 'devBusca.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'USER':'postgres',
+        'NAME':'devbusca',
+        'PASSWORD':'',
+        'PORT':'5432',
+        'HOST':'',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
@@ -163,6 +175,8 @@ USE_I18N = True
 
 USE_TZ = True
 
+CORS_ALLOW_ALL_ORIGINS = True
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
@@ -189,3 +203,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+if os.getcwd() == "/app":
+    DEBUG=False

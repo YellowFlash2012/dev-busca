@@ -14,4 +14,5 @@ urlpatterns = [
     path('', views.getRoutes),
     path('v1/projects/', views.getProjects),
     path('v1/projects/<str:pk>/', views.getSingleProject),
+    path('v1/projects/<str:pk>/vote', views.projectVote),
 ]
