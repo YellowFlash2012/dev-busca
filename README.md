@@ -1,7 +1,8 @@
 # dev-busca
-Django app for highlighting  some dev and their projects
+Django app for highlighting some dev and their projects. It is inspired by <a href="https://www.udemy.com/course/python-django-2021-complete-course/">this</a> udemy course
 
 <a href="https://devbusca.herokuapp.com/">Live preview</a>
+
 
 # highlights:
 - signup, login, logout users
@@ -16,4 +17,4 @@ Django app for highlighting  some dev and their projects
 - how to use __icontains, __iexact, __in while performing search queries
 
 # todos:
-- change login from useing username to email
+- change login from using username to email
