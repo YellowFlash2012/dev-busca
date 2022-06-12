@@ -1,6 +1,8 @@
 # dev-busca
 Django app for highlighting  some dev and their projects
 
+<a href="https://devbusca.herokuapp.com/">Live preview</a>
+
 # highlights:
 - signup, login, logout users
 - restrict certains actions to only logged in users
@@ -12,3 +14,6 @@ Django app for highlighting  some dev and their projects
 - conditionnaly render templates when the same template is used for 2 or more views
 - how to style and add atributes to form's inputs right in the forms.py
 - how to use __icontains, __iexact, __in while performing search queries
+
+# todos:
+- change login from useing username to email
